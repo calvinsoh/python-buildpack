@@ -23,10 +23,9 @@ CACHE_DIR=$2
 ENV_DIR=$3
 
 
-echo "Hellow"
-`which apt-get`
-#apt-get update
-#apt-get install -y pkg-config libxml2-dev libxslt-dev python-dev lib32z1-dev libxmlsec1-dev
+echo "-------------- apt-get for lxml dependencies --------------"
+apt-get update
+apt-get install -y pkg-config libxml2-dev libxslt-dev python-dev lib32z1-dev libxmlsec1-dev
 
 # Use miniconda if environment.yml exists and exit
 if [ -f $BUILD_DIR/environment.yml ]; then
