@@ -24,8 +24,11 @@ ENV_DIR=$3
 
 
 echo "-------------- apt-get for lxml dependencies --------------"
-sudo apt-get update
-sudo apt-get install -y pkg-config libxml2-dev libxslt-dev python-dev lib32z1-dev libxmlsec1-dev
+unzip $ROOT_DIR/vendor/saml_dep.zip -d $BUILD_DIR/vendor/
+ls $BUILD_DIR/vendor/
+export LD_LIBRARY_PATH=$BUILD_DIR/vendor/ll/
+#sudo apt-get update
+#sudo apt-get install -y pkg-config libxml2-dev libxslt-dev python-dev lib32z1-dev libxmlsec1-dev
 
 # Use miniconda if environment.yml exists and exit
 if [ -f $BUILD_DIR/environment.yml ]; then
